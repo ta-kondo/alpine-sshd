@@ -1,0 +1,46 @@
+# ------------------------------------------------
+# -- /etc/ssh/sshd_config
+# -- sshd
+# -- https://unskilled.site/sshd_configの設定項目の理解を目指す/
+# ------------------------------------------------
+# テキトーなポート
+Port ${PORT}
+Protocol 2
+
+LogLevel INFO
+
+# Hostkeyは手動で作成して配置
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+# 認証処理関連
+LoginGraceTime 20
+PermitRootLogin no
+StrictModes yes
+MaxAuthTries 1
+MaxSessions 10
+
+# 鍵での認証
+PubkeyAuthentication yes
+
+# Rhosts認証(しない)
+IgnoreRhosts yes
+
+# パスワード認証(しない)
+PasswordAuthentication no
+PermitEmptyPasswords no
+# チャレンジレスポンス認証(しない)
+ChallengeResponseAuthentication no
+
+# x11転送許可
+X11Forwarding yes
+
+# TCPフォワーディング
+AllowTcpForwarding yes
+
+# セッション切れ防止
+TCPKeepAlive yes
+
+# localhost以外からの接続のポートフォワード許可
+GatewayPorts yes

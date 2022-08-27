@@ -1,0 +1,5 @@
+# ignore
+
+# 鍵はgitに入れない
+docker/resource/keys/*
+!docker/resource/keys/WhatIsThis.md

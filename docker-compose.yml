@@ -1,0 +1,16 @@
+version: "3.7"
+# Used for remote development with VSCode.
+services:
+
+  # ------------------------------------
+  # sshd
+  #
+  sshd:
+    image: dev-sshd
+    build:
+      context: ./docker/
+    working_dir: /home/project
+    ports:
+      - "40221:40221"
+    environment:
+      - PORT=40221

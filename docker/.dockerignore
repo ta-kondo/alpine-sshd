@@ -1,0 +1,6 @@
+# dockerignore
+
+# 不要な鍵はコンテナに持ち込まない
+resource/keys/*
+!resource/keys/login_key.pub
+!resource/keys/ssh_host_*_key

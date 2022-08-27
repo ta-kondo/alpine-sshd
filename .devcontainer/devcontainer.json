@@ -1,0 +1,26 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.0/containers/alpine
+{
+	"name": "Alpine",
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+
+    "service": "sshd",
+
+    "workspaceFolder" : "/home/project",
+
+    // デフォルトのVisual Studio Codeからのコンテナ起動時のコマンドの、
+    // while sleep 1000; do :; doneによる上書きを防止
+    "overrideCommand": false,
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [40221]
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Replace when using a ptrace-based debugger like C++, Go, and Rust
+	// "runArgs": [ "--init", "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+
+}
